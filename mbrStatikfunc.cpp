@@ -37,7 +37,7 @@ int mahasiswa::nim=0;
         mahasiswa mhs2("Frans Dito");
         mahasiswa::setNim(9);
         mahasiswa mhs3("Lulu eliza");
-        mahasiswa mhs4("Pinkan");
+        mahasiswa mhs4("Lulu Bau");
 
         mhs1.printAll();
         mhs2.printAll();
