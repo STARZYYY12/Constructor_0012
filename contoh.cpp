@@ -1,35 +1,44 @@
 #include <iostream>
 using namespace std;
 
-    class Mahasiswa {
-        private:
-            static int jumlahMhs;
-        public:
-            string nama;
-            Mahasiswa(string pNama) {
-                nama = pNama;
-                ++jumlahMhs;
-                cout << "Mahasiswa dibuat" << nama << endl;
-            }
-            ~Mahasiswa(){
-                cout << "Destuctor terpanggil" << endl;
-            }
-            static int getJumlahMhs(){
-                return jumlahMhs;
-            }
-    };
+class mahasiswa{
+    private:
+        static int jumlahMhs;
+    public:
+        string nama;
 
-            int Mahasiswa::jumlahMhs = 0;
- 
-        int main () {
-
-            cout << "Jumlah Mahasiswa:" << Mahasiswa::jumlahMhs << endl;
-            
-            Mahasiswa mhs1("Nafis");
-            Mahasiswa mhs1("Donan");
-            Mahasiswa mhs1("Upi");
-
-            cout <<   
-
-
+        mahasiswa(string pNama){
+            nama=pNama;
+            ++jumlahMhs;
+            cout << "mahasiwa dibuat" << nama << endl;
         }
+        ~mahasiswa(){
+            cout << "jumlah mahasiswa" << jumlahMhs << endl;
+        }
+        static void setjumlah(int pJumlah){
+            jumlahMhs = pJumlah;
+        }
+        static int getjumlahMhs(){
+            return jumlahMhs;
+        }
+
+};
+
+int mahasiswa::jumlahMhs = 0;
+
+int main(){
+    cout << "jumlah mahasiswa:;" << mahasiswa::getjumlahMhs << endl;
+
+    mahasiswa mhs1("Andi");
+    mahasiswa mhs2("Lulu");
+    cout << "jumlah mahsiswa: " << mahasiswa::getjumlahMhs() << endl;
+    mahasiswa::setjumlah(5);
+    
+    {
+        mahasiswa mhs3("Husna");
+        cout << "jumlah mahsiswa: " << mahasiswa::getjumlahMhs << endl;
+    }
+
+    cout << "jumlah mahasiwa: " << mahasiswa::getjumlahMhs << endl;
+    return 0;
+}
